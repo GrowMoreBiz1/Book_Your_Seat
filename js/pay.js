@@ -15,7 +15,7 @@ function confirmPayment() {
         return;
     }
 
-    fetch('http://localhost:3000/save-payment', {  // Assuming you're consolidating to this single endpoint
+    fetch('https://movie-production.up.railway.app/save-payment', {  // Assuming you're consolidating to this single endpoint
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ numberInput.addEventListener('keydown', (event) => {
 
 function savePaymentData(seat_id, mail_id, reference_no) {
     const time_stamp = new Date().toISOString(); // Format time as ISO string
-    fetch('http://localhost:3000/save-payment', {
+    fetch('https://movie-production.up.railway.app/save-payment', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -139,14 +139,14 @@ function executeQuery(req, res) {
     });
 }
 
-app.post('http://localhost:3000/save-payment', ensureConnectedAndQuery);
+app.post('https://movie-production.up.railway.app/save-payment', ensureConnectedAndQuery);
 
 
 function saveBookedSeat(row, seatNo) {
     console.log('Row:', row); // Check if 'row' is a string
     console.log('Seat Number:', seatNo); // Check the seat number type and value
 
-    return fetch('http://localhost:3000/save-seat', {
+    return fetch('https://movie-production.up.railway.app/save-seat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

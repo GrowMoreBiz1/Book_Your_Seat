@@ -16,7 +16,7 @@ function closeImage() {
 
 // Function to fetch seat data from the server
 function fetchSeats() {
-    fetch('http://localhost:3000/get-seats')
+    fetch('https://movie-production.up.railway.app/get-seats')
         .then(response => response.json())
         .then(data => {
             addSeats(data.pvr);
@@ -99,7 +99,7 @@ function saveBookedSeat() {
     const row = selectedSeatId.substring(0, 1); // "H"
     const seatNo = parseInt(selectedSeatId.substring(1)); // 5
 
-    fetch('http://localhost:3000/save-seat', {
+    fetch('https://movie-production.up.railway.app/save-seat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
